@@ -1,0 +1,55 @@
+(gdb) b main
+Breakpoint 1 at 0x722: file p5original.c, line 8.
+(gdb) r
+Starting program: /home/runner/pps-test1-harini293-4/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5original.c:8
+8   {
+(gdb) n
+10     input(&a,&b,&c);
+(gdb) s
+input (a=0x7ffc033930e8, b=0x7ffc033930ec, c=0x7ffc033930f0) at p5original.c:17
+17      printf("enter a number : ");
+(gdb) n
+18      scanf("%d",a);
+(gdb) n
+enter a number : 56
+19      printf("enter a number : ");
+(gdb) n
+20      scanf("%d",b);
+(gdb) n
+enter a number : 39
+21      printf("enter a number : ");
+(gdb) n
+22      scanf("%d",c);
+(gdb) n
+enter a number : 9
+23  }
+(gdb) n
+main () at p5original.c:11
+11     cmp(a,b,c,&large);
+(gdb) s
+cmp (a=56, b=39, c=9, large=0x7ffc033930f4) at p5original.c:27
+27      if(a>b && a>c)
+(gdb) n
+28      *large=a;
+(gdb) n
+33  }
+(gdb) n
+main () at p5original.c:12
+12    output(large);
+(gdb) s
+output (large=56) at p5original.c:37
+37     printf("the larger number is %d",large);
+(gdb) n
+38  }(gdb) n
+main () at p5original.c:13
+13  }
+(gdb) n
+__libc_start_main (main=0x55c5e140071a <main>, argc=1, argv=0x7ffc033931e8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffc033931d8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+the larger number is 56
