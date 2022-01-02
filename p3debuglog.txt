@@ -1,11 +1,53 @@
-.	Add two numbers using 4 functions and Pass by reference
-		<br> Pass by value
-		<br> void input(int *a, int *b);
-		<br> void add(int a, int b, int *sum);
-		<br> void output(int a, int b, int sum);
-		<br> input:
-		<br> 1
-		<br> 2
-		<br> output:
-		<br> sum of 1+2 is 3
-    
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7d6: file p3original.c, line 22.
+(gdb) r
+Starting program: /home/runner/pps-test1-harini293-4/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3original.c:22
+22  {
+(gdb) n
+24    input(&a,&b);
+(gdb) s
+input (m=0x7fff701883ac, n=0x7fff701883b0) at p3original.c:5
+5     printf("entetr any number :");
+(gdb) n
+6     scanf("%d",m);
+(gdb) n
+entetr any number :5
+7     printf("enter any number :");
+(gdb) 
+8     scanf("%d",n);
+(gdb) n
+enter any number :6
+9   }
+(gdb) n
+main () at p3original.c:25
+25    add(a,b,&c);
+(gdb) s
+add (m=5, n=6, sum=0x7fff701883b4) at p3original.c:13
+13    *sum=m+n;
+(gdb) n
+14  }
+(gdb) n
+main () at p3original.c:26
+26    output(a,b,c);
+(gdb) s
+output (m=5, n=6, sum=11) at p3original.c:18
+18    printf("sum of %d + %d is %d",m,n,sum);
+(gdb) n
+19  }
+(gdb) n
+main () at p3original.c:27
+27  }(gdb) n
+__libc_start_main (main=0x555f4b2007ce <main>, argc=1, argv=0x7fff701884a8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fff70188498) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) Quit
+(gdb) Quit
+(gdb) 
+sum of 5 + 6 is 11[Inferior 1 (process 213) exited normally]
+(gdb) 
+The program is not being run.
