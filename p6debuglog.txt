@@ -1,0 +1,93 @@
+eading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x722: file p6original.c, line 10.
+(gdb) r
+Starting program: /home/runner/pps-test1-harini293-4/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6original.c:10
+10      n=input();
+(gdb) s
+input () at p6original.c:16
+16  {    int n;
+(gdb) n
+17      printf("enter any number : ");
+(gdb) n
+18      scanf("%d",&n);
+(gdb) n
+enter any number : 5
+19      return n;
+(gdb) n
+20  }
+(gdb) n
+main () at p6original.c:11
+11      add=sum(n);
+(gdb) s
+sum (n=5) at p6original.c:24
+24  int i,sum=0;
+(gdb) n
+25  for(i=1;i<=n;i++)
+(gdb) n
+26      sum=sum+i;
+(gdb) n
+25  for(i=1;i<=n;i++)
+(gdb) n
+26      sum=sum+i;
+(gdb) n
+25  for(i=1;i<=n;i++)
+(gdb) n
+26      sum=sum+i;
+(gdb) n
+25  for(i=1;i<=n;i++)
+(gdb) n
+26      sum=sum+i;
+(gdb) n
+25  for(i=1;i<=n;i++)
+(gdb) n
+26      sum=sum+i;
+(gdb) n
+25  for(i=1;i<=n;i++)
+(gdb) n
+27   return sum;
+(gdb) n
+28  }
+(gdb) n
+main () at p6original.c:12
+12      output(n,add);
+(gdb) s
+output (n=5, sum=15) at p6original.c:31
+31  {   int i=1;
+(gdb) n
+32      printf("%d",i);
+(gdb) n
+33      for(i=2;i<=n;i++)
+(gdb) n
+35      printf("+ %d ",i);
+(gdb) n
+33      for(i=2;i<=n;i++)
+(gdb) n
+35      printf("+ %d ",i);
+(gdb) n
+33      for(i=2;i<=n;i++)
+(gdb) n
+35      printf("+ %d ",i);
+(gdb) n
+33      for(i=2;i<=n;i++)
+(gdb) n
+35      printf("+ %d ",i);
+(gdb) n
+33      for(i=2;i<=n;i++)
+(gdb) n
+37      printf("=%d",sum);
+(gdb) n
+38  }
+(gdb) n
+main () at p6original.c:13
+13  }
+(gdb) n
+__libc_start_main (main=0x56242340071a <main>, argc=1, argv=0x7ffc57734e28, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffc57734e18) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+1+ 2 + 3 + 4 + 5 =15
