@@ -10,9 +10,7 @@ int input()
 
 int add(int a,int b)
 {
-	int c;
-	
-	return c;
+	return (a+b);
 }
 
 int output(int a,int b,int c)
