@@ -17,10 +17,10 @@ int large(int a, int b, int c)
   else if (b>a)
   return b;
 }
-
-
-
-
+void out(int big)
+{
+  printf("the larger numebr is %d",big);
+}
 int main()
 {
 	int a,b,c,big;
@@ -28,5 +28,5 @@ int main()
 	b=input();
 	c=input();
 	big= large(a, b, c);
-    printf("the larger numebr is %d",big);
+  out(big);
 }
