@@ -12,15 +12,19 @@ int large(int a, int b, int c)
 {
   if (a>b && a>c)
   return a;
-  else if( c>a)
-  return c;
-  else if (b>a)
+
+  else if(b>c)
   return b;
+
+  else 
+  return c;
 }
+
 void out(int big)
 {
   printf("the larger numebr is %d",big);
 }
+
 int main()
 {
 	int a,b,c,big;
