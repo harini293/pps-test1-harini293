@@ -9,47 +9,52 @@ Breakpoint 1, main () at p5original.c:8
 (gdb) n
 10     input(&a,&b,&c);
 (gdb) s
-input (a=0x7ffc033930e8, b=0x7ffc033930ec, c=0x7ffc033930f0) at p5original.c:17
+input (a=0x7ffd56c05aa8, b=0x7ffd56c05aac, c=0x7ffd56c05ab0)
+    at p5original.c:17
 17      printf("enter a number : ");
 (gdb) n
 18      scanf("%d",a);
 (gdb) n
-enter a number : 56
+enter a number : 4
 19      printf("enter a number : ");
 (gdb) n
 20      scanf("%d",b);
 (gdb) n
-enter a number : 39
+enter a number : 5
 21      printf("enter a number : ");
 (gdb) n
 22      scanf("%d",c);
 (gdb) n
-enter a number : 9
+enter a number : 1
 23  }
 (gdb) n
 main () at p5original.c:11
 11     cmp(a,b,c,&large);
 (gdb) s
-cmp (a=56, b=39, c=9, large=0x7ffc033930f4) at p5original.c:27
+cmp (a=4, b=5, c=1, large=0x7ffd56c05ab4) at p5original.c:27
 27      if(a>b && a>c)
 (gdb) n
-28      *large=a;
+30    else if(b>c)
 (gdb) n
-33  }
+31      *large=b;
+(gdb) n
+35  }
 (gdb) n
 main () at p5original.c:12
 12    output(large);
 (gdb) s
-output (large=56) at p5original.c:37
-37     printf("the larger number is %d",large);
+output (large=5) at p5original.c:39
+39     printf("the larger number is %d",large);
 (gdb) n
-38  }(gdb) n
+40  }(gdb) n
 main () at p5original.c:13
 13  }
 (gdb) n
-__libc_start_main (main=0x55c5e140071a <main>, argc=1, argv=0x7ffc033931e8, 
-    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
-    stack_end=0x7ffc033931d8) at ../csu/libc-start.c:344
+__libc_start_main (main=0x560d3b00071a <main>, argc=1, 
+    argv=0x7ffd56c05ba8, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7ffd56c05b98)
+    at ../csu/libc-start.c:344
 344 ../csu/libc-start.c: No such file or directory.
 (gdb) n
-the larger number is 56
+the larger number is 5
+(gdb) Quit
