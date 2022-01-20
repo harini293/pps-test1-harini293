@@ -28,11 +28,17 @@ for(i=1;i<=n;i++)
 }
 
 void output(int n,int sum)
-{   int i=1;
-    printf("%d",i);
-	for(i=2;i<=n;i++)
+{  
+  int i=1;
+  
+	for(i=1;i<n;i++)
 	{
-	printf("+ %d ",i);
+	printf(" %d + ",i);
 	}
-	printf("=%d",sum);
+	
+  printf("%d = %d",n,sum);
+
 }
+
+
+

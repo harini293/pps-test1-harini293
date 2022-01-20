@@ -1,0 +1,107 @@
+(gdb) b main
+Breakpoint 1 at 0x84d: file p7original.c, line 37.
+(gdb) r
+Starting program: /home/runner/pps-test1-harini293-4/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7original.c:37
+37  {
+(gdb) n
+39   n=input();
+(gdb) s
+input () at p7original.c:4
+4   {
+(gdb) n
+6   printf("enter the size of array");
+(gdb) n
+7   scanf("%d",&n);
+(gdb) n
+enter the size of array 4
+8   return n;
+(gdb) n
+9   }
+(gdb) n
+main () at p7original.c:40
+40   int a[n];
+(gdb) n
+41   array(n,a);
+(gdb) s
+array (n=4, a=0x7ffd109332e0) at p7original.c:14
+14    for(i=0;i<n;i++)
+(gdb) n
+16      printf("enter the elements");
+(gdb) n
+17      scanf("%d",&a[i]);
+(gdb) n
+enter the elements 1
+14    for(i=0;i<n;i++)
+(gdb) n
+16      printf("enter the elements");
+(gdb) n
+17      scanf("%d",&a[i]);
+(gdb) n
+enter the elements 2
+14    for(i=0;i<n;i++)
+(gdb) n
+16      printf("enter the elements");
+(gdb) n
+17      scanf("%d",&a[i]);
+(gdb) n
+enter the elements 4
+14    for(i=0;i<n;i++)
+(gdb) n
+16      printf("enter the elements");
+(gdb) n
+17      scanf("%d",&a[i]);
+(gdb) n
+enter the elements 6
+14    for(i=0;i<n;i++)
+(gdb) n
+19  }
+(gdb) n
+main () at p7original.c:42
+42   sum =add(n,a);
+(gdb) s
+add (n=4, a=0x7ffd109332e0) at p7original.c:23
+23    int sum=0,i;
+(gdb) n
+24    for(i=0;i<n;i++)
+(gdb) n
+26      sum = sum + a[i];
+(gdb) n
+24    for(i=0;i<n;i++)
+(gdb) n
+26      sum = sum + a[i];
+(gdb) n
+24    for(i=0;i<n;i++)
+(gdb) n
+26      sum = sum + a[i];
+(gdb) n
+24    for(i=0;i<n;i++)
+(gdb) n
+26      sum = sum + a[i];
+(gdb) n
+24    for(i=0;i<n;i++)
+(gdb) n
+28   return sum;
+(gdb) n
+29  }
+(gdb) n
+main () at p7original.c:43
+43   output(sum);
+(gdb) s
+output (sum=13) at p7original.c:33
+33    printf("sum is %d",sum);
+(gdb) n
+34  }
+(gdb) n
+main () at p7original.c:44
+44   return 0;  
+(gdb) n
+45  }(gdb) n
+__libc_start_main (main=0x558b4e60083c <main>, argc=1, argv=0x7ffd10933438, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffd10933428) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+sum is 13

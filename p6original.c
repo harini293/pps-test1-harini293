@@ -13,7 +13,8 @@ int main()
 }
 
 int input()
-{    int n;
+{ 
+  int n;
 	printf("enter any number : ");
 	scanf("%d",&n);
 	return n;
